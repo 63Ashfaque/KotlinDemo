@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Swatch4"
+    android:orientation="vertical"
+    tools:context=".AddProductActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Add Product"
+        android:textSize="@dimen/_25sdp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/textInputLayout">
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/textInputEditText"
+            android:hint="Floating Hint Enabled Default" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/textInputLayout">
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/textInputEditText"
+            android:hint="Floating Hint Enabled Default" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/textInputLayout">
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/textInputEditText"
+            android:hint="Floating Hint Enabled Default" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>
