@@ -9,11 +9,25 @@
     <style name="textInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_margin">@dimen/_4sdp</item>
+        <item name="android:layout_marginTop">@dimen/_5sdp</item>
+        <item name="android:layout_marginLeft">@dimen/_10sdp</item>
+        <item name="android:layout_marginRight">@dimen/_10sdp</item>
     </style>
 
     <style name="textInputEditText">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxLength">10</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:inputType">text</item>
+    </style>
+
+    <style name="materialButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_margin">@dimen/_10sdp</item>
+        <item name="android:backgroundTint">@color/Swatch6</item>
+        <item name="android:text">Add Product</item>
     </style>
 </resources>

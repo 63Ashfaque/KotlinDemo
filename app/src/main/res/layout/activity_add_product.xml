@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,29 +12,71 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
         android:gravity="center"
-        android:text="Add Product"
+        android:text="@string/add_product"
         android:textSize="@dimen/_25sdp" />
 
+    <!--    textLayoutProductName-->
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/textInputLayout">
+        android:id="@+id/textLayoutProductName"
+        style="@style/textInputLayout"
+        app:boxStrokeColor="@color/Swatch6"
+        app:hintTextColor="@color/Swatch6">
+
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edTextProductName"
             style="@style/textInputEditText"
-            android:hint="Floating Hint Enabled Default" />
+            android:hint="@string/product_name"
+            android:maxLength="25" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!--    textLayoutProductBuyingPrice-->
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/textInputLayout">
+        android:id="@+id/textLayoutProductBuyingPrice"
+        style="@style/textInputLayout"
+        app:boxStrokeColor="@color/Swatch6"
+        app:hintTextColor="@color/Swatch6">
+
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edTextProductBuyingPrice"
             style="@style/textInputEditText"
-            android:hint="Floating Hint Enabled Default" />
+            android:hint="@string/product_buying_price"
+            android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!--    textLayoutProductSellingPrice-->
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/textInputLayout">
+        android:id="@+id/textLayoutProductSellingPrice"
+        style="@style/textInputLayout"
+        app:boxStrokeColor="@color/Swatch6"
+        app:hintTextColor="@color/Swatch6">
+
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edTextProductSellingPrice"
             style="@style/textInputEditText"
-            android:hint="Floating Hint Enabled Default" />
+            android:hint="@string/product_selling_price"
+            android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <!--    textLayoutProductQuantity-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textLayoutProductQuantity"
+        style="@style/textInputLayout"
+        app:boxStrokeColor="@color/Swatch6"
+        app:hintTextColor="@color/Swatch6">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edTextProductQuantity"
+            style="@style/textInputEditText"
+            android:digits="0123456789"
+            android:hint="Product Quantity"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--    btnAddProduct-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAddProduct"
+        style="@style/materialButton" />
 
 </LinearLayout>
