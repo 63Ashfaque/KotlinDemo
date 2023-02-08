@@ -18,15 +18,20 @@ class Utils {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 
-    fun textViewEmptyChecker(textInputLayout: TextInputLayout, textInputEditText: TextInputEditText,errorMsg:String): Boolean {
+    fun textViewEmptyChecker(textInputLayout: TextInputLayout, textInputEditText: TextInputEditText,errorMsg:String): String {
         if(textInputEditText.text.toString().isEmpty())
         {
             textInputLayout.error=errorMsg
             textInputEditText.isFocusable=true
             textInputEditText.requestFocus()
-            return false
+            return ""
         }
         textInputLayout.error=null
-        return true
+        return textInputEditText.text.toString()
+    }
+
+    fun isValidMobile(mobile:String):Boolean {
+        val regex="[6-9]{1}[0-9]{9}";
+        return mobile.matches(regex.toRegex())
     }
 }

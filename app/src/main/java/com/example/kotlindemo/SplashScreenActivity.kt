@@ -24,6 +24,7 @@ class SplashScreenActivity : AppCompatActivity() {
         btnGo.setOnClickListener {
             val intent = Intent(applicationContext, AddProductActivity::class.java)
             startActivity(intent)
+            finish()
 
         }
 
