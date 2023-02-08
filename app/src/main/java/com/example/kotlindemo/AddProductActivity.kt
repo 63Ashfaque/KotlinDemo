@@ -37,6 +37,10 @@ class AddProductActivity : AppCompatActivity() {
             findViewById(R.id.textLayoutProductBuyingPrice)
 
 
+        Utils().logD(Utils().encrypt("ashu"))
+        Utils().logD(Utils().decrypt("D158C90256023E2C62F39FD9728D1D6C"))
+
+
         val database =
             Room.databaseBuilder(applicationContext, DataBaseClass::class.java, "ProductDataBase")
                 .build()
@@ -45,30 +49,30 @@ class AddProductActivity : AppCompatActivity() {
 
         btnAppProduct.setOnClickListener {
 
-            if (!Utils().textViewEmptyChecker(
+            if (Utils().textViewEmptyChecker(
                     textLayoutProductName,
                     edTextProductName,
                     "Product Name"
-                ).isEmpty()
+                ).isNotEmpty()
             ) {
-                if (!Utils().textViewEmptyChecker(
+                if (Utils().textViewEmptyChecker(
                         textLayoutProductQuantity,
                         edTextProductQuantity,
                         "Product Quantity"
-                    ).isEmpty()
+                    ).isNotEmpty()
                 ) {
-                    if (!Utils().textViewEmptyChecker(
+                    if (Utils().textViewEmptyChecker(
                             textLayoutProductSellingPrice,
                             edTextProductSellingPrice,
                             "Product Price"
-                        ).isEmpty()
+                        ).isNotEmpty()
                     ) {
 
-                        if (!Utils().textViewEmptyChecker(
+                        if (Utils().textViewEmptyChecker(
                                 textLayoutProductBuyingPrice,
                                 edTextProductBuyingPrice,
                                 "Product Buying Price"
-                            ).isEmpty()
+                            ).isNotEmpty()
                         ) {
 
                             val pName = edTextProductName.text.toString()
@@ -76,16 +80,16 @@ class AddProductActivity : AppCompatActivity() {
                             val pSellPrice = edTextProductSellingPrice.text.toString().toDouble()
                             val pBuyPrice = edTextProductBuyingPrice.text.toString().toDouble()
 
-                            if (!Utils().textViewEmptyChecker(
+                            if (Utils().textViewEmptyChecker(
                                     textLayoutProductBuyingPrice,
                                     edTextProductBuyingPrice,
                                     "Product Buying Price"
-                                ).isEmpty()
+                                ).isNotEmpty()
                             ) {
 
                                 GlobalScope.launch {
 
-                                    productDao.ProductInsert(
+                                    val insert = productDao.productInsert(
                                         ProductModel(
                                             0,
                                             pName,
@@ -94,10 +98,9 @@ class AddProductActivity : AppCompatActivity() {
                                             pBuyPrice
                                         )
                                     )
+                                    Utils().toaster(applicationContext, "Insert Successful")
                                 }
 
-                                Utils().logD("first log")
-                                Utils().toaster(this, "fgdfg")
                             }
                         }
                     }

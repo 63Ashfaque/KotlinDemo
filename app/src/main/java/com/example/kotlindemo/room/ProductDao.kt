@@ -11,14 +11,14 @@ import androidx.room.Update
 interface ProductDao {
 
     @Insert
-    suspend fun ProductInsert(productModel: ProductModel)
+    suspend fun productInsert(productModel: ProductModel)
 
     @Update
-    fun ProductUpdate(productModel: ProductModel)
+    fun productUpdate(productModel: ProductModel)
 
     @Delete
-    fun ProductDelete(productModel: ProductModel)
+    fun productDelete(productModel: ProductModel)
 
     @Query("Select * From ProductTable")
-    fun GetProductList():LiveData<List<ProductModel>>
+    fun getProductList():LiveData<List<ProductModel>>
 }
